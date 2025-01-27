@@ -18,12 +18,12 @@ def _sub(
     content: str,
     vars: typing.Dict[str, Substitutor] = {},
     loop_targets: typing.Dict[str, typing.List[Substitutor]] = {},
-    extra_subs: typing.Callable[str, str] = lambda x: x,
+    extra_subs: typing.Callable[[str], str] = lambda x: x,
 ) -> str:
     """Make substitutions to a string."""
     from generate import parse
 
-    c = extra_subs(parse(content))
+    c = parse(extra_subs(content))
     return c.substitute(vars=vars, loop_targets=loop_targets)
 
 
@@ -34,7 +34,7 @@ def generate(
     print_timing: bool = False,
     vars: typing.Dict[str, Substitutor] = {},
     loop_targets: typing.Dict[str, typing.List[Substitutor]] = {},
-    extra_subs: typing.Callable[str, str] = lambda x: x,
+    extra_subs: typing.Callable[[str], str] = lambda x: x,
 ):
     """Make substitutions and copy all files recursively in a directory."""
     for file_ in os.listdir(join(input_folder, subdir)):
