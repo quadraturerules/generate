@@ -1,0 +1,5 @@
+--
+template: v in values
+filename: p-{{v}}.py
+--
+print({{v}})

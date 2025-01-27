@@ -22,6 +22,7 @@ ci = ["generate[style,test]"]
 [tool.ruff]
 line-length = 100
 indent-width = 4
+exclude = ["test/input_dir/*"]
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = ["F401"]
