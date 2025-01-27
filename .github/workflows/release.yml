@@ -4,6 +4,7 @@ on:
   push:
     tags: ["v*"]
 
+jobs:
   python-library:
     name: Release Python library
     runs-on: ubuntu-22.04
