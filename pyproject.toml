@@ -1,5 +1,5 @@
 [project]
-name = "generate"
+name = "qr-generate"
 version = "0.1.0"
 description = "generate files from templates"
 readme = "README.md"
@@ -17,7 +17,7 @@ repository = "https://github.com/quadraturerules/generate"
 [project.optional-dependencies]
 style = ["ruff", "mypy"]
 test = ["pytest"]
-ci = ["generate[style,test]"]
+ci = ["qr-generate[style,test]"]
 
 [tool.ruff]
 line-length = 100

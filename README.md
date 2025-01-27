@@ -2,6 +2,20 @@
 
 This code can be used to generate plain text files from templates.
 
+## Installing
+
+To install the latest release from PyPI, run:
+
+```bash
+pip install qr-generate
+```
+
+To install the latest code from GitHub, run:
+
+```bash
+pip install git+https://github.com/quadraturerules/generate.git
+```
+
 ## Examples
 
 ### Looping in a file
