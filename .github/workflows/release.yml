@@ -3,7 +3,6 @@ name: Push to PyPI
 on:
   push:
     tags: ["v*"]
-    branches: ["main"]
 
 jobs:
   python-library:
