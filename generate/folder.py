@@ -43,7 +43,15 @@ def generate(
             continue
         if os.path.isdir(join(input_folder, file)):
             os.mkdir(join(output_folder, file))
-            generate(input_folder, output_folder, file)
+            generate(
+                input_folder,
+                output_folder,
+                file,
+                print_timing=print_timing,
+                vars=vars,
+                loop_targets=loop_targets,
+                extra_subs=extra_subs,
+            )
         elif file.endswith(".template"):
             with open(join(input_folder, file)) as f:
                 content = f.read()
