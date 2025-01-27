@@ -6,9 +6,9 @@ readme = "README.md"
 requires-python = ">=3.8.0"
 license = { file = "LICENSE" }
 authors = [
-    { name = "Matthew Scroggs", email = "defelement@mscroggs.co.uk" }
+    { name = "Matthew Scroggs", email = "generate@mscroggs.co.uk" }
 ]
-dependencies = ["PyGithub", "pytz", "pyyaml"]
+dependencies = ["pyyaml"]
 
 [project.urls]
 homepage = "https://github.com/quadraturerules/generate"
