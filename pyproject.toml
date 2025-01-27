@@ -1,5 +1,5 @@
 [project]
-name = "generate"
+name = "qr-generate"
 version = "0.1.0"
 description = "generate files from templates"
 readme = "README.md"
