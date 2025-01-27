@@ -2,7 +2,7 @@
 
 import re
 
-from gen.nodes import For, If, Line, ListOfNodes
+from generate.nodes import For, If, Line, ListOfNodes
 
 
 def parse(code: str) -> ListOfNodes:

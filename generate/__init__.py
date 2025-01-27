@@ -2,5 +2,5 @@
 
 Generate files from templates."""
 
-from gen import nodes, parser, substitute
-from gen.parser import parse
+from generate import nodes, parser, substitute
+from generate.parser import parse

@@ -3,7 +3,7 @@
 import typing
 from abc import ABC, abstractmethod
 
-from gen.substitute import Substitutor
+from generate.substitute import Substitutor
 
 
 class Node(ABC):

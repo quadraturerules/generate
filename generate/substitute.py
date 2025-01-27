@@ -6,7 +6,7 @@ import typing
 from abc import ABC, abstractmethod
 
 if typing.TYPE_CHECKING:
-    from gen.nodes import Node
+    from generate.nodes import Node
 else:
     Node = typing.Any
 
