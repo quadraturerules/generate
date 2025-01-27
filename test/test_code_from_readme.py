@@ -4,7 +4,7 @@ import sys
 
 
 def test_looping_in_a_file():
-    template = "{{for v in values}}\n" "print({{v}})\n" "{{end for}}"
+    template = "{{for v in values}}\nprint({{v}})\n{{end for}}"
 
     t = generate.parse(template)
     values = [generate.substitute.Float(i) for i in [1.0, 4.0, 6.0]]
