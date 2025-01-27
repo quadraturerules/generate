@@ -18,7 +18,9 @@ jobs:
         with:
           python-version: "3.12"
       - name: Build
-        run: python3 -m pip install build --user
+        run: |
+          python3 -m pip install build
+          python3 -m build
 
       - name: Publish to PyPI
         uses: pypa/gh-action-pypi-publish@release/v1
