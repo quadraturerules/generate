@@ -1,0 +1,33 @@
+[project]
+name = "generate"
+version = "0.1.0"
+description = "generate files from templates"
+readme = "README.md"
+requires-python = ">=3.8.0"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Matthew Scroggs", email = "defelement@mscroggs.co.uk" }
+]
+dependencies = ["PyGithub", "pytz", "pyyaml"]
+
+[project.urls]
+homepage = "https://github.com/quadraturerules/generate"
+repository = "https://github.com/quadraturerules/generate"
+
+[project.optional-dependencies]
+style = ["ruff", "mypy"]
+test = ["pytest"]
+ci = ["generate[style,test]"]
+
+[tool.ruff]
+line-length = 100
+indent-width = 4
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.mypy]
+ignore_missing_imports = true
