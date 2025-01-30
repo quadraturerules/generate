@@ -16,6 +16,13 @@ To install the latest code from GitHub, run:
 pip install git+https://github.com/quadraturerules/generate.git
 ```
 
+## Syntax
+
+The following syntax can be used to generate text:
+
+- For loops use the syntax `{{for VARIABLE in LIST}}` and `{{end for}}`
+- Ifs use the syntax `{{if CONDITION}}` and `{{end if}}`
+
 ## Examples
 
 ### Looping in a file
@@ -91,3 +98,8 @@ python -m generate input_code output_code
 ```
 
 This would generate files called `p-1.0.py`, `p-4.0py`, and `p-6.0.py`.
+
+### Larger example
+
+A larger example of the use of this library can be found by looking at
+[the code used to generate the quadraturerules libraries associated with the online encylopedia of quadrature rules](https://github.com/quadraturerules/quadraturerules/tree/main/library).
