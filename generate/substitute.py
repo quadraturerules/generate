@@ -93,3 +93,42 @@ class IndexedFloat(Substitutor):
     ) -> typing.Dict[str, typing.Generator[Substitutor, None, None]]:
         """Get list of loop targets."""
         return {}
+
+
+class Array(Substitutor):
+    """Substitutor for an array of floating point numbers."""
+
+    def __init__(self, arr):
+        """Initialise."""
+        self.arr = arr
+
+    def substitute(self, code: str, variable: str, bracketed: bool = True) -> str:
+        """Substitute."""
+        return replace(code, [], bracketed)
+
+    def loop_targets(
+        self,
+        variable: str,
+    ) -> typing.Dict[str, typing.Generator[Substitutor, None, None]]:
+        """Get list of loop targets."""
+        return {variable: (IndexedFloat(j, i) for i, j in enumerate(self.arr))}
+
+
+class IndexedArray(Substitutor):
+    """Substitutor for an indexed array of floating point numbers."""
+
+    def __init__(self, arr, index):
+        """Initialise."""
+        self.arr = arr
+        self.index = index
+
+    def substitute(self, code: str, variable: str, bracketed: bool = True) -> str:
+        """Substitute."""
+        return replace(code, [(f"{variable}.index", lambda: f"{self.index}")], bracketed)
+
+    def loop_targets(
+        self,
+        variable: str,
+    ) -> typing.Dict[str, typing.Generator[Substitutor, None, None]]:
+        """Get list of loop targets."""
+        return {variable: (IndexedFloat(j, i) for i, j in enumerate(self.arr))}
